@@ -1,16 +1,16 @@
 #include <iostream>
-using namspace std;
+using namespace std;
 
 void input( int& hours24, int& minutes);
+
 void output( int hours, int minutes);
 
 int main()
 {
     int timeHours, timeMinutes, waitHours, waitMinutes,finishHours, finishMinutes;
 
-  cout << "Compute completion time from current time and waiting period\n";
+  cout<<"Compute completion time from current time and waiting period\n";
   
-
   char ans = 'y'; 
   while ('y' == ans || 'Y' == ans)
   {
@@ -20,6 +20,7 @@ int main()
     cout << "Waiting time:\n";
     input(waitHours, waitMinutes);
 
+    int totalminutes = timeMinutes + waitMinutes;
     
     finishHours = timeHours + waitHours;
     finishMinutes = timeMinutes + waitMinutes;
@@ -43,4 +44,12 @@ int main()
 
   return 0;
 }
-
+void input( int& hours24, int& minutes)
+{
+  cout<<"Enter hours and minutes";
+  cin>>hours24>>minutes;
+}
+void output( int hours, int minutes)
+{
+  cout<<"Time: "<<hours<<"hours and "<<minutes<<" minutes\n";
+}
